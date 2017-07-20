@@ -44,13 +44,7 @@ final internal class World: NSObject {
         within this test suite. This is only true within the context of Quick
         functional tests.
     */
-#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
-    // Convention of generating Objective-C selector has been changed on Swift 3
-    @objc(isRunningAdditionalSuites)
     internal var isRunningAdditionalSuites = false
-#else
-    internal var isRunningAdditionalSuites = false
-#endif
 
     private var specs: [String: ExampleGroup] = [:]
     private var sharedExamples: [String: SharedExampleClosure] = [:]
